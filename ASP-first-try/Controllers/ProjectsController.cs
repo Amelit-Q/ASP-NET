@@ -4,30 +4,30 @@ namespace ASP_first_try.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TicketsController : ControllerBase
+    public class ProjectsController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("All the tickets was readed from database");
+            return Ok("Reading all the projects");
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            return Ok($"HEY YOU ARE USING TICKETS CONTROLLERS GET PARAM THAT'S IT TICKETS ID IS #{id}");
+            return Ok($"Reading the specific project Id which is equals to #{id}");
         }
 
         [HttpPost]
         public IActionResult Post()
         {
-            return Ok("Creating a tickets");
+            return Ok("Creating a project");
         }
 
         [HttpPut]
         public IActionResult Put()
         {
-            return Ok("Updating a tickets");
+            return Ok("Updating a project");
         }
 
         [HttpDelete("{id}")]
@@ -35,5 +35,6 @@ namespace ASP_first_try.Controllers
         {
             return Ok($"Deleting ticket #{id}");
         }
+        
     }
 }
