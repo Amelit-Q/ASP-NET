@@ -18,6 +18,22 @@ namespace ASP_first_try.Controllers
             return Ok($"Reading the specific project Id which is equals to #{id}");
         }
 
+        /// <summary>
+        /// api/projects/{pid}
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("/api/projects/{pid}/tickets")]
+        public IActionResult GetProjectId(int pId, [FromQuery] int tId)
+        {
+            if (tId == 0)
+            {
+                return Ok($"Reading all the tickets belong to project #{pId}");
+            }
+            else
+                return Ok($"Reading project #{pId}, tickets #{tId}");
+        }
+
         [HttpPost]
         public IActionResult Post()
         {
@@ -35,6 +51,5 @@ namespace ASP_first_try.Controllers
         {
             return Ok($"Deleting ticket #{id}");
         }
-        
     }
 }
