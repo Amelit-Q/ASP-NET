@@ -4,12 +4,11 @@ namespace ASP_first_try.Models
 {
     public class Ticket
     {
-        [FromQuery(Name = "tid")]
         public int TicketId { get; set; }
-        
-        [FromRoute(Name = "pid")]
         public int ProjectId { get; set; }
+        [FromBody]
         public string Title { get; set; }
+        [FromBody]
         public string Description { get; set; }
     }
 }

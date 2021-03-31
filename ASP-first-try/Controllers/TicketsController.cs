@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASP_first_try.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_first_try.Controllers
 {
@@ -18,16 +19,22 @@ namespace ASP_first_try.Controllers
             return Ok($"HEY YOU ARE USING TICKETS CONTROLLERS GET PARAM THAT'S IT TICKETS ID IS #{id}");
         }
 
+        // [HttpPost]
+        // public IActionResult Post()
+        // {
+        //     return Ok("Creating a tickets");
+        // }
+
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody]Ticket ticket)
         {
-            return Ok("Creating a tickets");
+            return Ok(ticket);
         }
 
         [HttpPut]
-        public IActionResult Put()
+        public IActionResult Put([FromBody]Ticket ticket)
         {
-            return Ok("Updating a tickets");
+            return Ok(ticket);
         }
 
         [HttpDelete("{id}")]
