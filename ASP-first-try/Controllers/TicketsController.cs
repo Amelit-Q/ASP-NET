@@ -18,13 +18,7 @@ namespace ASP_first_try.Controllers
         {
             return Ok($"HEY YOU ARE USING TICKETS CONTROLLERS GET PARAM THAT'S IT TICKETS ID IS #{id}");
         }
-
-        // [HttpPost]
-        // public IActionResult Post()
-        // {
-        //     return Ok("Creating a tickets");
-        // }
-
+        
         [HttpPost]
         public IActionResult Post([FromBody]Ticket ticket)
         {
